@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="GeoTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PxH-AU-mDE" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bx-CM-BXp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJn-WR-SqG">
+                                <rect key="frame" x="0.0" y="420" width="375" height="247"/>
+                                <connections>
+                                    <segue destination="P69-Tm-kbz" kind="embed" id="FAt-YU-G0f"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PxH-AU-mDE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="B3K-oj-Z8Y"/>
+                            <constraint firstItem="LJn-WR-SqG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="INs-jH-ett"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PxH-AU-mDE" secondAttribute="trailing" id="PfH-zl-QfH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PxH-AU-mDE" secondAttribute="bottom" id="QLc-Vt-nUc"/>
+                            <constraint firstItem="2bx-CM-BXp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Vhs-bb-bZa"/>
+                            <constraint firstItem="PxH-AU-mDE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="W4m-oR-PSW"/>
+                            <constraint firstItem="LJn-WR-SqG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="400" id="WAx-Fz-2w6"/>
+                            <constraint firstItem="LJn-WR-SqG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Y8h-U1-PdO"/>
+                            <constraint firstItem="LJn-WR-SqG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bJg-oE-fnG"/>
+                            <constraint firstItem="2bx-CM-BXp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bjR-ir-fzI"/>
+                            <constraint firstItem="2bx-CM-BXp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qxn-oH-A0e"/>
+                            <constraint firstItem="2bx-CM-BXp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rk5-o8-dTY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="backView" destination="2bx-CM-BXp" id="Kz2-Co-0YY"/>
+                        <outlet property="container" destination="LJn-WR-SqG" id="dWR-QP-Yev"/>
+                        <outlet property="mapView" destination="PxH-AU-mDE" id="eTW-Pg-cgF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Filter Sheet View Controller-->
+        <scene sceneID="0Vh-pc-2Mp">
+            <objects>
+                <viewController id="P69-Tm-kbz" customClass="FilterSheetViewController" customModule="GeoTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PFx-Yo-VOT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="247"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8E-AX-B3b">
+                                <rect key="frame" x="169.5" y="6" width="36" height="5"/>
+                                <color key="backgroundColor" red="0.7486119923857868" green="0.7486119923857868" blue="0.7486119923857868" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="9YR-xt-MNh"/>
+                                    <constraint firstAttribute="height" constant="5" id="WSl-3G-Y1p"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hZV-e4-b9M">
+                                <rect key="frame" x="0.0" y="63" width="375" height="184"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="FilterRecordTVC" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterRecordTVC" id="ZFO-kL-szB" customClass="FilterRecordTableViewCell" customModule="GeoTestApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZFO-kL-szB" id="jt2-3X-Fzj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rww-Ze-QNj">
+                                                    <rect key="frame" x="15" y="11" width="22" height="22"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="rww-Ze-QNj" secondAttribute="height" multiplier="1:1" id="qsM-oQ-smc"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="SfH-py-qPm">
+                                                    <rect key="frame" x="16" y="11.5" width="286" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J8W-cT-Ih5">
+                                                    <rect key="frame" x="310" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="switchAction:" destination="ZFO-kL-szB" eventType="valueChanged" id="dbe-lV-70e"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rww-Ze-QNj" firstAttribute="leading" secondItem="jt2-3X-Fzj" secondAttribute="leadingMargin" id="EKv-I0-ZA5"/>
+                                                <constraint firstAttribute="trailing" secondItem="J8W-cT-Ih5" secondAttribute="trailing" constant="16" id="F2i-bf-AP6"/>
+                                                <constraint firstItem="rww-Ze-QNj" firstAttribute="bottom" secondItem="jt2-3X-Fzj" secondAttribute="bottomMargin" id="QIA-KL-KgW"/>
+                                                <constraint firstItem="SfH-py-qPm" firstAttribute="leading" secondItem="jt2-3X-Fzj" secondAttribute="leading" constant="16" id="YP9-dN-4Vm"/>
+                                                <constraint firstItem="rww-Ze-QNj" firstAttribute="top" secondItem="jt2-3X-Fzj" secondAttribute="topMargin" id="hY6-Q6-bzd"/>
+                                                <constraint firstItem="J8W-cT-Ih5" firstAttribute="leading" secondItem="SfH-py-qPm" secondAttribute="trailing" constant="8" id="mcN-di-KH3"/>
+                                                <constraint firstItem="SfH-py-qPm" firstAttribute="centerY" secondItem="jt2-3X-Fzj" secondAttribute="centerY" id="sb2-Bf-Yul"/>
+                                                <constraint firstItem="J8W-cT-Ih5" firstAttribute="top" secondItem="jt2-3X-Fzj" secondAttribute="top" constant="6" id="uD3-Qn-8Cz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="colorView" destination="rww-Ze-QNj" id="dkS-VU-qf5"/>
+                                            <outlet property="title" destination="SfH-py-qPm" id="zus-ij-LaG"/>
+                                            <outlet property="toggle" destination="J8W-cT-Ih5" id="j9X-8a-oOW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IO1-rU-2mq">
+                                <rect key="frame" x="101" y="19" width="173" height="32"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="7" maxX="10" maxY="7"/>
+                                <state key="normal" title="Download coordinates"/>
+                                <connections>
+                                    <action selector="buttonDownloadAction:" destination="P69-Tm-kbz" eventType="touchUpInside" id="Gpa-xv-pzN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hZV-e4-b9M" firstAttribute="leading" secondItem="PFx-Yo-VOT" secondAttribute="leading" id="0HH-NZ-yp7"/>
+                            <constraint firstItem="hZV-e4-b9M" firstAttribute="top" secondItem="IO1-rU-2mq" secondAttribute="bottom" constant="12" id="B4l-Zd-BSU"/>
+                            <constraint firstItem="C8E-AX-B3b" firstAttribute="centerX" secondItem="PFx-Yo-VOT" secondAttribute="centerX" id="BId-z3-1nu"/>
+                            <constraint firstItem="IO1-rU-2mq" firstAttribute="top" secondItem="C8E-AX-B3b" secondAttribute="bottom" constant="8" id="bCb-ek-q1X"/>
+                            <constraint firstItem="C8E-AX-B3b" firstAttribute="top" secondItem="PFx-Yo-VOT" secondAttribute="topMargin" constant="6" id="mBr-IX-XlH"/>
+                            <constraint firstAttribute="trailing" secondItem="hZV-e4-b9M" secondAttribute="trailing" id="nub-lx-5CR"/>
+                            <constraint firstItem="IO1-rU-2mq" firstAttribute="centerX" secondItem="PFx-Yo-VOT" secondAttribute="centerX" id="pwY-gH-hsd"/>
+                            <constraint firstAttribute="bottom" secondItem="hZV-e4-b9M" secondAttribute="bottom" id="tEQ-vg-SrM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uXU-Ih-rJ1"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonDownload" destination="IO1-rU-2mq" id="ozt-rk-Ia9"/>
+                        <outlet property="gripperView" destination="C8E-AX-B3b" id="HAU-l4-Yc7"/>
+                        <outlet property="mainView" destination="PFx-Yo-VOT" id="mV1-R3-dAx"/>
+                        <outlet property="tableView" destination="hZV-e4-b9M" id="OS3-Xi-1kg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EZO-9Z-zyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="896.79999999999995" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
