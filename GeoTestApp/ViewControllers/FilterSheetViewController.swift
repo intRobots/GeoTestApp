@@ -70,7 +70,7 @@ class FilterSheetViewController: UIViewController, UITableViewDelegate, UITableV
         self.mainView.addGestureRecognizer(panGesture)
         self.tableView.panGestureRecognizer.addTarget(self, action: #selector(handlePanGesture(_:)))
         
-        filters = geoTagManager.dataBaseManager.getFilters()
+        filters = geoTagManager.getFilters()
     }
     
     ///
@@ -104,7 +104,7 @@ class FilterSheetViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: -- GeoTagManagerDelegate
     func geoObjectsRecieved() {
-        filters = geoTagManager.dataBaseManager.getFilters()
+        filters = geoTagManager.getFilters()
         tableView.reloadData()
         updateTagsOnMap()
     }

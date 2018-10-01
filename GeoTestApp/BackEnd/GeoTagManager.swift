@@ -36,6 +36,10 @@ class GeoTagManager: NSObject, NetworkDataManagerDelegate {
         return dataBaseManager.getGeoObjects(filters: filters)
     }
     
+    ///
+    func getFilters() -> [String:Any] {
+        return dataBaseManager.getFilters()
+    }
     
     // request tags from server
     func requestGeoTags() {
